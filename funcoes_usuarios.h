@@ -80,7 +80,7 @@ emprestimo_usuario();
 int carregar_usuarios(Usuario *usuario){
 
     if(_mkdir(pasta_usuarios) == 0){
-            printf("Pasta criada com sucesso!\n");
+            printf("Pasta de Usuários criada com sucesso!\n");
     }
 
     lista_usuariosb = fopen("Usuarios\\Lista_Usuarios.dat", "rb");
@@ -225,6 +225,11 @@ Usuario * cadastrar_usuarios(int *total_usuarios, Usuario *usuario){
 
 Usuario * buscar_usuarios(int *total_usuarios, Usuario *usuario){
 
+    if(*total_usuarios == 0){
+        printf("Nenhum usuário cadastrado.\n");
+        return NULL;
+    }
+
   int escolha, encontrado = 0;
 
   printf("Buscar matrícula (1) ou nome (2)?\n");
@@ -287,6 +292,11 @@ Usuario * buscar_usuarios(int *total_usuarios, Usuario *usuario){
 
 Usuario * listar_usuarios(int *total_usuarios, Usuario *usuario){
 
+    if(*total_usuarios == 0){
+        printf("Nenhum usuário cadastrado.\n");
+        return NULL;
+    }
+
     printf("------------------ USUÁRIOS ------------------\n\n");
     for(int i = 0; i < *total_usuarios; i++){
         printf("Matricula: %d\nNome: %s\nCurso: %s\n\n", usuario[i].matricula, usuario[i].nome, usuario[i].curso);
@@ -296,6 +306,11 @@ Usuario * listar_usuarios(int *total_usuarios, Usuario *usuario){
 };
 
 Usuario * atualizar_usuarios(int *total_usuarios, Usuario *usuario){
+
+    if(*total_usuarios == 0){
+        printf("Nenhum usuário cadastrado.\n");
+        return NULL;
+    }
 
     int qtd, escolha;
     printf("Quantidade de usuários a atualizar:\n");
@@ -385,6 +400,11 @@ Usuario * atualizar_usuarios(int *total_usuarios, Usuario *usuario){
 
 
 Usuario * remover_usuarios(int *total_usuarios, Usuario *usuario){
+
+    if(*total_usuarios == 0){
+        printf("Nenhum usuário cadastrado.\n");
+        return NULL;
+    }
 
     int escolha, qtd;
 
