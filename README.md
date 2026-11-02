@@ -44,8 +44,8 @@ O sistema utiliza arquivos para armazenar e recuperar os dados, permitindo mante
 
 
 ```bash
-git clone https://github.com/yhsww/biblioteca_poe.git
-cd biblioteca_poe
+git clone https://github.com/yhsww/biblioteca-poe.git
+cd biblioteca-poe
 ```
 
 ### 3. Compilar o programa
